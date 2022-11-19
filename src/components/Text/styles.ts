@@ -15,6 +15,6 @@ export const TextContainer = styled.p<TextContainerProps>`
   font-family: "Roboto", sans-serif;
   line-height: 1.3;
   font-size: ${(props) => `${TEXT_SIZES[props.variant]}rem`};
-  font-weight: ${(props) => (props.bold ? "bold" : "normal")};
+  font-weight: ${(props) => (props.bold ? 700 : 400)};
   color: inherit;
 `;
