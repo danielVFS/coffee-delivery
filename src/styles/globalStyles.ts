@@ -4,7 +4,7 @@ export const GlobalStyles = createGlobalStyle`
   * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box
+    box-sizing: border-box;
   }
 
   body {
@@ -18,5 +18,10 @@ export const GlobalStyles = createGlobalStyle`
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.3;
+  }
+
+  button {
+    outline: 0;
+    border: 0;
   }
 `;
