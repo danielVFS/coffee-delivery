@@ -16,4 +16,5 @@ export const TextContainer = styled.p<TextContainerProps>`
   line-height: 1.3;
   font-size: ${(props) => `${TEXT_SIZES[props.variant]}rem`};
   font-weight: ${(props) => (props.bold ? "bold" : "normal")};
+  color: inherit;
 `;
