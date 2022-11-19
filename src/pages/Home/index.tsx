@@ -1,17 +1,23 @@
-import { Text } from "../../components/Text";
+import { Heading } from "../../components/Heading";
 
 export function Home() {
   return (
     <>
-      <Text variant="small">
+      <Heading variant="xs">
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      </Text>
-      <Text variant="medium">
+      </Heading>
+      <Heading variant="small">
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      </Text>
-      <Text variant="large">
+      </Heading>
+      <Heading variant="medium">
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      </Text>
+      </Heading>
+      <Heading variant="large">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </Heading>
+      <Heading variant="xl">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </Heading>
     </>
   );
 }
