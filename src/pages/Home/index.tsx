@@ -1,12 +1,16 @@
-import { Button } from "../../components/Button";
+import { ShoppingCart } from "phosphor-react";
+import { IconButton } from "../../components/IconButton";
 
 export function Home() {
   return (
-    <>
-      <Button variant="yellow" fullWidth>
-        LABEL
-      </Button>
-      <Button variant="purple">LABEL</Button>
-    </>
+    <div style={{ marginTop: "20px" }}>
+      <IconButton variant="yellow" count={8}>
+        <ShoppingCart weight="fill" />
+      </IconButton>
+      <br />
+      <IconButton variant="purple">
+        <ShoppingCart weight="fill" />
+      </IconButton>
+    </div>
   );
 }
