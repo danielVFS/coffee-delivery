@@ -1,4 +1,4 @@
-import { Input } from "../../components/Input";
+import { SelectPaymentType } from "../../components/SelectPaymentType";
 
 export function Home() {
   return (
@@ -10,9 +10,7 @@ export function Home() {
         gap: "1rem",
       }}
     >
-      <Input optional />
-      <Input placeholder="Digite sua senha" />
-      <Input defaultValue="Daniel Vitor" />
+      <SelectPaymentType>CARTÃO DE CRÉDITO</SelectPaymentType>
     </div>
   );
 }
