@@ -1,5 +1,6 @@
 import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react";
 import CoffeeDeliveryImage from "../../assets/Coffee-Delivery.png";
+import { CoffeeList } from "../../components/CoffeeList";
 import { Heading } from "../../components/Heading";
 import { Text } from "../../components/Text";
 import {
@@ -65,6 +66,8 @@ export function Home() {
         </div>
         <img src={CoffeeDeliveryImage} />
       </IntroContainer>
+
+      <CoffeeList />
     </main>
   );
 }
