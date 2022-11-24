@@ -28,6 +28,7 @@ export const CoffeeImage = styled.img`
 
 export const TagsContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 0.25rem;
   align-items: center;
   justify-content: center;
