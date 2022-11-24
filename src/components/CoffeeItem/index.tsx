@@ -1,5 +1,4 @@
 import { ShoppingCart } from "phosphor-react";
-import AmericanoImg from "../../assets/coffess/Americano.png";
 import { Heading } from "../Heading";
 import { IconButton } from "../IconButton";
 import { Select } from "../Select";
@@ -14,24 +13,40 @@ import {
   TagsContainer,
 } from "./styles";
 
-export function CoffeeItem() {
+interface CoffeeItemProps {
+  name: string;
+  srcImg: string;
+  description: string;
+  price: number;
+  tags: string[];
+}
+
+export function CoffeeItem({
+  name,
+  srcImg,
+  description,
+  price,
+  tags,
+}: CoffeeItemProps) {
   return (
     <CoffeItemContainer>
-      <CoffeeImage src={AmericanoImg} />
+      <CoffeeImage src={srcImg} />
       <TagsContainer>
-        <Tag>Tradicional</Tag>
+        {tags.map((tag) => {
+          return <Tag key={tag}>{tag}</Tag>;
+        })}
       </TagsContainer>
       <ItemInfoContainer>
         <Heading variant="small" color="subtitle">
-          Expresso Tradicional
+          {name}
         </Heading>
         <Text variant="small" color="label">
-          O tradicional café feito com água quente e grãos moídos
+          {description}
         </Text>
       </ItemInfoContainer>
       <ActionsContainer>
         <Heading variant="medium" color="text">
-          R$ 9,90
+          {price}
         </Heading>
         <Actions>
           <Select />
