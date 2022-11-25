@@ -23,6 +23,7 @@ export const CoffeeMock: Coffee[] = [
     description: "O tradicional café feito com água quente e grãos moídos",
     srcImg: expresso,
     price: 5,
+    amount: 0,
   },
   {
     id: uuid(),
@@ -31,6 +32,7 @@ export const CoffeeMock: Coffee[] = [
     description: "Expresso diluído, menos intenso que o tradicional",
     srcImg: americano,
     price: 4,
+    amount: 0,
   },
   {
     id: uuid(),
@@ -39,6 +41,7 @@ export const CoffeeMock: Coffee[] = [
     description: "Café expresso tradicional com espuma cremosa",
     srcImg: expresso_cremoso,
     price: 6.99,
+    amount: 0,
   },
   {
     id: uuid(),
@@ -47,6 +50,7 @@ export const CoffeeMock: Coffee[] = [
     description: "Bebida preparada com café expresso e cubos de gelo",
     srcImg: cafe_gelado,
     price: 7,
+    amount: 0,
   },
   {
     id: uuid(),
@@ -55,6 +59,7 @@ export const CoffeeMock: Coffee[] = [
     description: "Meio a meio de expresso tradicional com leite vaporizado",
     srcImg: cafe_com_leite,
     price: 5.99,
+    amount: 0,
   },
   {
     id: uuid(),
@@ -64,6 +69,7 @@ export const CoffeeMock: Coffee[] = [
       "Uma dose de café expresso, com o dobro de leite e espuma cremosa",
     srcImg: latte,
     price: 6.6,
+    amount: 0,
   },
   {
     id: uuid(),
@@ -73,6 +79,7 @@ export const CoffeeMock: Coffee[] = [
       "Bebida com canela feita de doses iguais de café, leite e espuma",
     srcImg: capuccino,
     price: 10,
+    amount: 0,
   },
   {
     id: uuid(),
@@ -82,6 +89,7 @@ export const CoffeeMock: Coffee[] = [
       "Café expresso misturado com um pouco de leite quente e espuma",
     srcImg: macchiato,
     price: 9,
+    amount: 0,
   },
   {
     id: uuid(),
@@ -90,6 +98,7 @@ export const CoffeeMock: Coffee[] = [
     description: "Café expresso com calda de chocolate, pouco leite e espuma",
     srcImg: mocaccino,
     price: 9,
+    amount: 0,
   },
   {
     id: "10",
@@ -98,6 +107,7 @@ export const CoffeeMock: Coffee[] = [
     description: "Bebida feita com chocolate dissolvido no leite quente e café",
     srcImg: chocolate_quente,
     price: 10.0,
+    amount: 0,
   },
   {
     id: uuid(),
@@ -107,6 +117,7 @@ export const CoffeeMock: Coffee[] = [
       "Drink gelado de café expresso com rum, creme de leite e hortelã",
     srcImg: cubano,
     price: 10.99,
+    amount: 0,
   },
   {
     id: uuid(),
@@ -115,6 +126,7 @@ export const CoffeeMock: Coffee[] = [
     description: "Bebida adocicada preparada com café e leite de coco",
     srcImg: havaiano,
     price: 9,
+    amount: 0,
   },
   {
     id: uuid(),
@@ -123,6 +135,7 @@ export const CoffeeMock: Coffee[] = [
     description: "Bebida preparada com grãos de café árabe e especiarias",
     srcImg: arabe,
     price: 8,
+    amount: 0,
   },
   {
     id: uuid(),
@@ -131,6 +144,7 @@ export const CoffeeMock: Coffee[] = [
     description: "Bebida a base de café, uísque irlandês, açúcar e chantilly",
     srcImg: irlandes,
     price: 11,
+    amount: 0,
   },
   {
     id: uuid(),
@@ -140,6 +154,7 @@ export const CoffeeMock: Coffee[] = [
       "Uma dose de café expresso com  leite de soja e espuma cremosa",
     srcImg: latte,
     price: 11,
+    amount: 0,
   },
   {
     id: uuid(),
@@ -148,5 +163,6 @@ export const CoffeeMock: Coffee[] = [
     description: "Bebida preparada com café expresso americano e cubos de gelo",
     srcImg: americano,
     price: 4,
+    amount: 0,
   },
 ];

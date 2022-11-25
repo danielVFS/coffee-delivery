@@ -5,4 +5,5 @@ export interface Coffee {
   description: string;
   price: number;
   tags: string[];
+  amount: number;
 }
