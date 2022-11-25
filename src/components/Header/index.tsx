@@ -11,7 +11,9 @@ export function Header() {
       <HeaderActions>
         <LocationContainer>
           <MapPin weight="fill" className="location-svg" />
-          <Text variant="small">Porto Alegre, RS</Text>
+          <Text variant="small" color="purple-dark">
+            Porto Alegre, RS
+          </Text>
         </LocationContainer>
 
         <IconButton variant="yellow">
