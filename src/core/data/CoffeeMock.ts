@@ -1,6 +1,6 @@
 import { v4 as uuid } from "uuid";
 import americano from "../../assets/coffess/Americano.png";
-import arabe from "../../assets/coffess/Araba.png";
+import arabe from "../../assets/coffess/Arabe.png";
 import cafe_com_leite from "../../assets/coffess/CafecomLeite.png";
 import cafe_gelado from "../../assets/coffess/CafeGelado.png";
 import capuccino from "../../assets/coffess/Capuccino.png";

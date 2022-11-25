@@ -28,6 +28,12 @@ export function CoffeeItem({
   price,
   tags,
 }: CoffeeItemProps) {
+  const formattedPrice = new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+    minimumFractionDigits: 2,
+  }).format(price);
+
   return (
     <CoffeItemContainer>
       <CoffeeImage src={srcImg} />
@@ -46,7 +52,7 @@ export function CoffeeItem({
       </ItemInfoContainer>
       <ActionsContainer>
         <Heading variant="medium" color="text">
-          {price}
+          {formattedPrice}
         </Heading>
         <Actions>
           <Select />

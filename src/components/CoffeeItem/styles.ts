@@ -56,5 +56,6 @@ export const ActionsContainer = styled.div`
 
 export const Actions = styled.div`
   display: flex;
+  align-items: center;
   gap: 0.5rem;
 `;
