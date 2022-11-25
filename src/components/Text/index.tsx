@@ -1,9 +1,8 @@
-import { HEADING_COLORS } from "../Heading/styles";
-import { TextContainer, TEXT_SIZES } from "./styles";
+import { TextContainer, TEXT_COLORS, TEXT_SIZES } from "./styles";
 
 interface TextProps extends React.HTMLAttributes<HTMLParagraphElement> {
   variant: keyof typeof TEXT_SIZES;
-  color: keyof typeof HEADING_COLORS;
+  color: keyof typeof TEXT_COLORS;
   bold?: boolean;
   children: string;
 }

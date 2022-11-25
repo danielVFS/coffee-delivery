@@ -15,6 +15,8 @@ export const TEXT_COLORS = {
   button: "base-button",
   input: "base-input",
   card: "base-card",
+  purple: "purple",
+  "purple-dark": "purple-dark",
 } as const;
 
 interface TextContainerProps {
