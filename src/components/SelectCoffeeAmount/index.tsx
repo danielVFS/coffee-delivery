@@ -3,28 +3,36 @@ import { useState } from "react";
 import { Text } from "../Text";
 import { SelectContainer } from "./styles";
 
-interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
-  value?: number;
+interface SelectCoffeeAmountProps
+  extends React.HTMLAttributes<HTMLButtonElement> {
+  amount?: number;
+  onAmountChange: (value: number) => void;
 }
 
-export function SelectCoffeeAmount({ value, ...props }: ButtonProps) {
-  const [selectedValue, setSelectedValue] = useState(value ? value : 1);
+export function SelectCoffeeAmount({
+  amount,
+  onAmountChange,
+  ...props
+}: SelectCoffeeAmountProps) {
+  const [selectedAmount, setSelectedAmount] = useState(amount ? amount : 0);
 
   const decreaseValue = () => {
-    setSelectedValue((state) =>
-      state !== 0 ? (state = state - 1) : (state = 0)
-    );
+    const value = selectedAmount !== 0 ? selectedAmount - 1 : 0;
+    setSelectedAmount(value);
+    onAmountChange(value);
   };
 
   const increaseValue = () => {
-    setSelectedValue((state) => (state = state + 1));
+    const value = selectedAmount + 1;
+    setSelectedAmount(value);
+    onAmountChange(value);
   };
 
   return (
     <SelectContainer {...props}>
       <Minus onClick={decreaseValue} />
       <Text variant="medium" color="title">
-        {String(selectedValue)}
+        {String(selectedAmount)}
       </Text>
       <Plus onClick={increaseValue} />
     </SelectContainer>
