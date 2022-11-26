@@ -15,7 +15,7 @@ export function addCoffeeToCartAction(coffee: Coffee) {
   };
 }
 
-export function increaseCoffeeAmountAction(coffeeId: number) {
+export function increaseCoffeeAmountAction(coffeeId: string) {
   return {
     type: CoffeeActionsTypes.ADD_COFFEE_TO_CART,
     payload: {
@@ -24,7 +24,7 @@ export function increaseCoffeeAmountAction(coffeeId: number) {
   };
 }
 
-export function decreaseCoffeeAmountAction(coffeeId: Coffee) {
+export function decreaseCoffeeAmountAction(coffeeId: string) {
   return {
     type: CoffeeActionsTypes.ADD_COFFEE_TO_CART,
     payload: {
