@@ -1,4 +1,5 @@
 import { ShoppingCart } from "phosphor-react";
+import { Coffee } from "../../core/models/Coffee";
 import { Heading } from "../Heading";
 import { IconButton } from "../IconButton";
 import { SelectCoffeeAmount } from "../SelectCoffeeAmount";
@@ -14,40 +15,30 @@ import {
 } from "./styles";
 
 interface CoffeeItemProps {
-  name: string;
-  srcImg: string;
-  description: string;
-  price: number;
-  tags: string[];
+  coffee: Coffee;
 }
 
-export function CoffeeItem({
-  name,
-  srcImg,
-  description,
-  price,
-  tags,
-}: CoffeeItemProps) {
+export function CoffeeItem({ coffee }: CoffeeItemProps) {
   const formattedPrice = new Intl.NumberFormat("pt-BR", {
     style: "currency",
     currency: "BRL",
     minimumFractionDigits: 2,
-  }).format(price);
+  }).format(coffee.price);
 
   return (
     <CoffeItemContainer>
-      <CoffeeImage src={srcImg} />
+      <CoffeeImage src={coffee.srcImg} />
       <TagsContainer>
-        {tags.map((tag) => {
+        {coffee.tags.map((tag) => {
           return <Tag key={tag}>{tag}</Tag>;
         })}
       </TagsContainer>
       <ItemInfoContainer>
         <Heading variant="small" color="subtitle">
-          {name}
+          {coffee.name}
         </Heading>
         <Text variant="small" color="label">
-          {description}
+          {coffee.description}
         </Text>
       </ItemInfoContainer>
       <ActionsContainer>
@@ -55,7 +46,7 @@ export function CoffeeItem({
           {formattedPrice}
         </Heading>
         <Actions>
-          <SelectCoffeeAmount />
+          <SelectCoffeeAmount amount={coffee.amount} />
           <IconButton variant="purple">
             <ShoppingCart weight="fill" />
           </IconButton>

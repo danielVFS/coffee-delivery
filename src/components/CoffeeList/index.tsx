@@ -12,16 +12,7 @@ export function CoffeeList() {
 
       <ListCoffee>
         {CoffeeMock.map((coffee) => {
-          return (
-            <CoffeeItem
-              key={coffee.id}
-              description={coffee.description}
-              name={coffee.name}
-              price={coffee.price}
-              srcImg={coffee.srcImg}
-              tags={coffee.tags}
-            />
-          );
+          return <CoffeeItem key={coffee.id} coffee={coffee} />;
         })}
       </ListCoffee>
     </CoffeeListContainer>
