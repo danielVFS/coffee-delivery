@@ -40,6 +40,7 @@ export const IconButtonButtonContainer = styled.button<IconButtonButtonContainer
   padding: 0.5rem;
   border-radius: 6px;
   font-weight: 700;
+  cursor: pointer;
 
   transition: all 0.3s;
 
