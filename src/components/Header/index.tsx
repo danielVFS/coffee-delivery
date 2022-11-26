@@ -19,9 +19,11 @@ export function Header() {
 
   const navigateToCheckoutPage = () => navigate("/checkout");
 
+  const navigateToHomePage = () => navigate("/");
+
   return (
     <HeaderContainer>
-      <img src={Logo} alt="Coffee Delivery logo" />
+      <img src={Logo} alt="Coffee Delivery logo" onClick={navigateToHomePage} />
       <HeaderActions>
         <LocationContainer>
           <MapPin weight="fill" className="location-svg" />
