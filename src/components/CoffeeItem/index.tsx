@@ -1,7 +1,7 @@
 import { ShoppingCart } from "phosphor-react";
 import { Heading } from "../Heading";
 import { IconButton } from "../IconButton";
-import { Select } from "../Select";
+import { SelectCoffeeAmount } from "../SelectCoffeeAmount";
 import { Text } from "../Text";
 import {
   Actions,
@@ -55,7 +55,7 @@ export function CoffeeItem({
           {formattedPrice}
         </Heading>
         <Actions>
-          <Select />
+          <SelectCoffeeAmount />
           <IconButton variant="purple">
             <ShoppingCart weight="fill" />
           </IconButton>

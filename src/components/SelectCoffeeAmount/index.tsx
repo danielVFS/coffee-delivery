@@ -7,7 +7,7 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   value?: number;
 }
 
-export function Select({ value, ...props }: ButtonProps) {
+export function SelectCoffeeAmount({ value, ...props }: ButtonProps) {
   const [selectedValue, setSelectedValue] = useState(value ? value : 1);
 
   const decreaseValue = () => {
