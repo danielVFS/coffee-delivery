@@ -1,4 +1,6 @@
 import { ShoppingCart } from "phosphor-react";
+import { useContext, useState } from "react";
+import { CoffeeContext } from "../../contexts/CoffeesContext";
 import { Coffee } from "../../core/models/Coffee";
 import { Heading } from "../Heading";
 import { IconButton } from "../IconButton";
@@ -19,6 +21,19 @@ interface CoffeeItemProps {
 }
 
 export function CoffeeItem({ coffee }: CoffeeItemProps) {
+  const [amount, setAmount] = useState(0);
+
+  const { addCoffeeToCart } = useContext(CoffeeContext);
+
+  const handleSetAmount = (value: number) => {
+    setAmount(value);
+  };
+
+  const handleAddShoppingToCart = () => {
+    const coffeeWithAmount: Coffee = { ...coffee, amount };
+    addCoffeeToCart(coffeeWithAmount);
+  };
+
   const formattedPrice = new Intl.NumberFormat("pt-BR", {
     style: "currency",
     currency: "BRL",
@@ -46,8 +61,11 @@ export function CoffeeItem({ coffee }: CoffeeItemProps) {
           {formattedPrice}
         </Heading>
         <Actions>
-          <SelectCoffeeAmount amount={coffee.amount} />
-          <IconButton variant="purple">
+          <SelectCoffeeAmount
+            amount={coffee.amount}
+            onAmountChange={handleSetAmount}
+          />
+          <IconButton variant="purple" onClick={handleAddShoppingToCart}>
             <ShoppingCart weight="fill" />
           </IconButton>
         </Actions>
