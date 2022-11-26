@@ -23,7 +23,9 @@ export function Select({ value, ...props }: ButtonProps) {
   return (
     <SelectContainer {...props}>
       <Minus onClick={decreaseValue} />
-      <Text variant="medium">{String(selectedValue)}</Text>
+      <Text variant="medium" color="title">
+        {String(selectedValue)}
+      </Text>
       <Plus onClick={increaseValue} />
     </SelectContainer>
   );
