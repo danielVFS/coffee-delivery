@@ -1,5 +1,6 @@
+import { CoffeeCheckout } from "../../components/CoffeeCheckout";
 import { Heading } from "../../components/Heading";
-import { CheckoutContainer, CoffeeCard, OrderFormContainer } from "./styles";
+import { CheckoutContainer, OrderFormContainer } from "./styles";
 
 export function Checkout() {
   return (
@@ -15,7 +16,7 @@ export function Checkout() {
         <Heading variant="xs" color="subtitle">
           Cafés selecionados
         </Heading>
-        <CoffeeCard></CoffeeCard>
+        <CoffeeCheckout />
       </div>
     </CheckoutContainer>
   );

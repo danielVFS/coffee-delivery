@@ -9,9 +9,6 @@ export const CheckoutContainer = styled.main`
 `;
 
 export const OrderFormContainer = styled.div`
+  margin-top: 15px;
   width: 640px;
-`;
-
-export const CoffeeCard = styled.div`
-  width: 448px;
 `;
