@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
   * {
@@ -24,4 +24,10 @@ export const GlobalStyles = createGlobalStyle`
     outline: 0;
     border: 0;
   }
+`;
+
+export const ListDivider = styled.div`
+  width: 100%;
+  height: 1px;
+  background: ${(props) => props.theme["base-button"]};
 `;
