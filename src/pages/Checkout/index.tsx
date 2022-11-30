@@ -9,7 +9,7 @@ export function Checkout() {
         <Heading variant="xs" color="subtitle">
           Complete seu pedido
         </Heading>
-        <OrderFormContainer></OrderFormContainer>
+        <OrderFormContainer />
       </div>
 
       <div>
