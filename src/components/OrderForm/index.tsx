@@ -1,5 +1,14 @@
-import { OrderFormContainer } from "./styles";
+import {
+  AddressContainer,
+  OrderFormContainer,
+  PaymentTypeContainer,
+} from "./styles";
 
 export function OrderForm() {
-  return <OrderFormContainer></OrderFormContainer>;
+  return (
+    <OrderFormContainer>
+      <AddressContainer></AddressContainer>
+      <PaymentTypeContainer></PaymentTypeContainer>
+    </OrderFormContainer>
+  );
 }
