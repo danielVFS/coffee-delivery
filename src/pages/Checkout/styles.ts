@@ -7,8 +7,3 @@ export const CheckoutContainer = styled.main`
   align-items: center;
   gap: 2rem;
 `;
-
-export const OrderFormContainer = styled.div`
-  margin-top: 15px;
-  width: 640px;
-`;

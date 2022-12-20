@@ -1,6 +1,7 @@
 import { CoffeeCheckout } from "../../components/CoffeeCheckout";
 import { Heading } from "../../components/Heading";
-import { CheckoutContainer, OrderFormContainer } from "./styles";
+import { OrderForm } from "../../components/OrderForm";
+import { CheckoutContainer } from "./styles";
 
 export function Checkout() {
   return (
@@ -9,7 +10,7 @@ export function Checkout() {
         <Heading variant="xs" color="subtitle">
           Complete seu pedido
         </Heading>
-        <OrderFormContainer />
+        <OrderForm />
       </div>
 
       <div>
