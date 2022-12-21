@@ -5,12 +5,17 @@ import {
 } from "./styles";
 
 interface InputProps extends React.HTMLAttributes<HTMLInputElement> {
+  width?: string;
   optional?: boolean;
 }
 
-export function Input({ optional, ...props }: InputProps) {
+export function Input({
+  width = "100%",
+  optional = false,
+  ...props
+}: InputProps) {
   return (
-    <InputContainer>
+    <InputContainer style={{ width: width }}>
       <StyledInput {...props} />
       {optional && <OptionalContainer>Opcional</OptionalContainer>}
     </InputContainer>
