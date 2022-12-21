@@ -10,6 +10,7 @@ export const InputContainer = styled.div`
   padding: 12px;
   background: ${(props) => props.theme["base-input"]};
   color: ${(props) => props.theme["base-text"]};
+  border: 1px solid ${(props) => props.theme["base-button"]};
 
   &::placeholder {
     color: ${(props) => props.theme["base-label"]};
