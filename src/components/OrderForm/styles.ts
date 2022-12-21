@@ -18,6 +18,21 @@ export const AddressContainer = styled.div`
   border-radius: 6px;
 `;
 
+export const AddressInfoContainer = styled.div`
+  display: flex;
+  gap: 0.5rem;
+
+  svg {
+    color: ${(props) => props.theme["yellow-dark"]};
+  }
+`;
+
+export const AddressInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.125;
+`;
+
 export const PaymentTypeContainer = styled.div`
   width: 100%;
   background: ${(props) => props.theme["base-card"]};
