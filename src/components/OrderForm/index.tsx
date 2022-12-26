@@ -1,9 +1,12 @@
 import { MapPinLine } from "phosphor-react";
+import { Input } from "../Input";
 import { Text } from "../Text";
 import {
   AddressContainer,
+  AddressFormContainer,
   AddressInfo,
   AddressInfoContainer,
+  InputInfoContainer,
   OrderFormContainer,
   PaymentTypeContainer,
 } from "./styles";
@@ -23,6 +26,20 @@ export function OrderForm() {
             </Text>
           </AddressInfo>
         </AddressInfoContainer>
+
+        <AddressFormContainer>
+          <Input placeholder="CEP" width="200px" />
+          <Input placeholder="Rua" />
+          <InputInfoContainer>
+            <Input placeholder="Número" width="200px" />
+            <Input placeholder="Complemento" optional />
+          </InputInfoContainer>
+          <InputInfoContainer>
+            <Input placeholder="Bairo" width="200px" />
+            <Input placeholder="Cidade" />
+            <Input placeholder="UF" width="60px" />
+          </InputInfoContainer>
+        </AddressFormContainer>
       </AddressContainer>
       <PaymentTypeContainer></PaymentTypeContainer>
     </OrderFormContainer>

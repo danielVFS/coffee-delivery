@@ -33,6 +33,17 @@ export const AddressInfo = styled.div`
   gap: 0.125;
 `;
 
+export const AddressFormContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`;
+
+export const InputInfoContainer = styled.div`
+  display: flex;
+  gap: 0.75rem;
+`;
+
 export const PaymentTypeContainer = styled.div`
   width: 100%;
   background: ${(props) => props.theme["base-card"]};
