@@ -5,4 +5,5 @@ export const CheckoutContainer = styled.main`
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+  justify-content: center;
 `;
