@@ -53,3 +53,12 @@ export const PaymentTypeContainer = styled.div`
   padding: 2.5rem;
   border-radius: 6px;
 `;
+
+export const PaymentInfoContainer = styled.div`
+  display: flex;
+  gap: 0.5rem;
+
+  svg {
+    color: ${(props) => props.theme["purple"]};
+  }
+`;

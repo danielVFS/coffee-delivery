@@ -8,6 +8,7 @@ import {
   AddressInfoContainer,
   InputInfoContainer,
   OrderFormContainer,
+  PaymentInfoContainer,
   PaymentTypeContainer,
 } from "./styles";
 
@@ -41,7 +42,20 @@ export function OrderForm() {
           </InputInfoContainer>
         </AddressFormContainer>
       </AddressContainer>
-      <PaymentTypeContainer></PaymentTypeContainer>
+
+      <PaymentTypeContainer>
+        <PaymentInfoContainer>
+          <MapPinLine size={22} weight="regular" />
+          <AddressInfo>
+            <Text variant="medium" color="subtitle">
+              Pagamento
+            </Text>
+            <Text variant="small" color="text">
+              O pagamento é feito na entrega. Escolha a forma que deseja pagar
+            </Text>
+          </AddressInfo>
+        </PaymentInfoContainer>
+      </PaymentTypeContainer>
     </OrderFormContainer>
   );
 }
