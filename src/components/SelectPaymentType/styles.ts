@@ -1,6 +1,13 @@
 import styled from "styled-components";
 
-export const SelectPaymentContainer = styled.button`
+export const SelectPaymentTypeContainer = styled.div`
+  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+`;
+
+export const PaymentTypeButton = styled.button`
   color: ${(props) => props.theme["base-text"]};
   background: ${(props) => props.theme["base-button"]};
 
@@ -31,7 +38,7 @@ export const SelectPaymentContainer = styled.button`
     background: ${(props) => props.theme["base-hover"]};
   }
 
-  &:focus {
+  .active {
     color: ${(props) => props.theme["base-text"]};
     background: ${(props) => props.theme["purple-light"]};
     border: 1px solid ${(props) => props.theme.purple};

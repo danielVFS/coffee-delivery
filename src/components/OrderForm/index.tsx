@@ -1,5 +1,6 @@
 import { MapPinLine } from "phosphor-react";
 import { Input } from "../Input";
+import { SelectPaymentType } from "../SelectPaymentType";
 import { Text } from "../Text";
 import {
   AddressContainer,
@@ -55,6 +56,11 @@ export function OrderForm() {
             </Text>
           </AddressInfo>
         </PaymentInfoContainer>
+
+        <SelectPaymentType
+          optionSelected="credit"
+          onOptionSelected={() => {}}
+        />
       </PaymentTypeContainer>
     </OrderFormContainer>
   );
