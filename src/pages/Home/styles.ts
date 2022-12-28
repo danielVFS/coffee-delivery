@@ -1,18 +1,26 @@
 import styled from "styled-components";
+import { device } from "../../styles/device";
 import { defaultTheme } from "../../styles/themes/default";
 
 export const IntroContainer = styled.section`
-  height: 544px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media ${device.laptop} {
+    flex-direction: column;
+  }
 `;
 
 export const TitleContainer = styled.div`
-  max-width: 700px;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  @media ${device.laptop} {
+    text-align: center;
+  }
 `;
 
 export const ItemsContainer = styled.div`

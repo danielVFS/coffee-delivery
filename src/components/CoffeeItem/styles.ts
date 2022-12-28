@@ -6,6 +6,7 @@ export const CoffeItemContainer = styled.div`
   align-items: center;
   width: 256px;
   height: 310px;
+  margin-top: 20px;
   background: ${(props) => props.theme["base-card"]};
   border-radius: 6px 36px 6px 36px;
 `;
