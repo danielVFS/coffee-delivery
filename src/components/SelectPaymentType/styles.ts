@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const SelectPaymentTypeContainer = styled.div`
   display: flex;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 0.75rem;
 `;
 
