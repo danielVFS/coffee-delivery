@@ -1,3 +1,10 @@
+import { SuccessContainer, TitleContainer } from "./styles";
+
 export function Success() {
-  return <h1>success</h1>;
+  return (
+    <SuccessContainer>
+      <TitleContainer></TitleContainer>
+      <img src={SuccessContainer} />
+    </SuccessContainer>
+  );
 }
