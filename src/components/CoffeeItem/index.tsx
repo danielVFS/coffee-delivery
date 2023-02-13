@@ -21,9 +21,11 @@ interface CoffeeItemProps {
 }
 
 export function CoffeeItem({ coffee }: CoffeeItemProps) {
-  const [amount, setAmount] = useState(0);
+  const { addCoffeeToCart, coffees } = useContext(CoffeeContext);
 
-  const { addCoffeeToCart } = useContext(CoffeeContext);
+  const [amount, setAmount] = useState(
+    coffees.find((cf) => cf.id === coffee.id)?.amount
+  );
 
   const handleSetAmount = (value: number) => {
     setAmount(value);
@@ -62,7 +64,7 @@ export function CoffeeItem({ coffee }: CoffeeItemProps) {
         </Heading>
         <Actions>
           <SelectCoffeeAmount
-            amount={coffee.amount}
+            amount={amount}
             onAmountChange={handleSetAmount}
           />
           <IconButton variant="purple" onClick={handleAddShoppingToCart}>

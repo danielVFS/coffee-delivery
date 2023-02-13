@@ -14,7 +14,9 @@ export function SelectCoffeeAmount({
   onAmountChange,
   ...props
 }: SelectCoffeeAmountProps) {
-  const [selectedAmount, setSelectedAmount] = useState(amount ? amount : 0);
+  const [selectedAmount, setSelectedAmount] = useState(
+    amount !== undefined ? amount : 0
+  );
 
   const decreaseValue = () => {
     const value = selectedAmount !== 0 ? selectedAmount - 1 : 0;
