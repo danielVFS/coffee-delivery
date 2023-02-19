@@ -1,7 +1,6 @@
 import { Trash } from "phosphor-react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import CoffeePlaceImg from "../../assets/coffee-place.svg";
-import ExpressoImg from "../../assets/coffess/Expresso.png";
 import { CoffeeContext } from "../../contexts/CoffeesContext";
 import { ListDivider } from "../../styles/globalStyles";
 import { Button } from "../Button";
@@ -20,48 +19,75 @@ import {
 } from "./styles";
 
 export function CoffeeCheckout() {
+  const [deliveryPrice, setDeliveryPrice] = useState(5);
+
   const { coffees } = useContext(CoffeeContext);
+
+  const formatValueToPrice = (value: number): string => {
+    const formattedPrice = new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+      minimumFractionDigits: 2,
+    }).format(value);
+
+    return formattedPrice;
+  };
+
+  const priceOfCoffees = coffees.reduce(
+    (accumulator, currentValue) => accumulator + currentValue.price,
+    0
+  );
+
+  const totalPrice =
+    coffees.reduce(
+      (accumulator, currentValue) => accumulator + currentValue.price,
+      0
+    ) + deliveryPrice;
 
   return (
     <CoffeeCheckoutContainer>
       {coffees.length > 0 ? (
         <>
-          <CoffeeCheckoutItem>
-            <CoffeeCheckoutItemInfo>
-              <img src={ExpressoImg} />
-              <CoffeeCheckoutItemInfoDetails>
-                <Text variant="medium" color="subtitle">
-                  Expresso Tradicional
-                </Text>
-                <CoffeeCheckoutItemInfoActions>
-                  <SelectCoffeeAmount amount={1} onAmountChange={() => {}} />
-                  <CoffeeCheckoutRemoveItemButton>
-                    <Trash width={16} />
-                    <Text variant="small" color="text">
-                      REMOVER
-                    </Text>
-                  </CoffeeCheckoutRemoveItemButton>
-                </CoffeeCheckoutItemInfoActions>
-              </CoffeeCheckoutItemInfoDetails>
-            </CoffeeCheckoutItemInfo>
-            <Text variant="medium" color="text" bold>
-              R$ 9,90
-            </Text>
-          </CoffeeCheckoutItem>
-          <ListDivider />
-          <CoffeeCheckoutItem>
-            <Text variant="medium" color="text" bold>
-              R$ 9,90
-            </Text>
-          </CoffeeCheckoutItem>
-          <ListDivider />
+          {coffees.map((coffee) => {
+            return (
+              <>
+                <CoffeeCheckoutItem key={coffee.id}>
+                  <CoffeeCheckoutItemInfo>
+                    <img src={coffee.srcImg} />
+                    <CoffeeCheckoutItemInfoDetails>
+                      <Text variant="medium" color="subtitle">
+                        {coffee.name}
+                      </Text>
+                      <CoffeeCheckoutItemInfoActions>
+                        <SelectCoffeeAmount
+                          amount={coffee.amount}
+                          onAmountChange={() => {}}
+                        />
+                        <CoffeeCheckoutRemoveItemButton>
+                          <Trash width={16} />
+                          <Text variant="small" color="text">
+                            REMOVER
+                          </Text>
+                        </CoffeeCheckoutRemoveItemButton>
+                      </CoffeeCheckoutItemInfoActions>
+                    </CoffeeCheckoutItemInfoDetails>
+                  </CoffeeCheckoutItemInfo>
+                  <Text variant="medium" color="text" bold>
+                    {formatValueToPrice(coffee.price * coffee.amount)}
+                  </Text>
+                </CoffeeCheckoutItem>
+                <ListDivider />
+              </>
+            );
+          })}
+
           <CoffeeCheckoutInfoContainer>
             <CoffeeCheckoutInfo>
               <Text variant="small" color="text">
                 Total de Items
               </Text>
               <Text variant="medium" color="text">
-                R$ 27,90
+                {formatValueToPrice(priceOfCoffees)}
               </Text>
             </CoffeeCheckoutInfo>
 
@@ -70,7 +96,7 @@ export function CoffeeCheckout() {
                 Entrega
               </Text>
               <Text variant="medium" color="text">
-                R$ 3,50
+                {formatValueToPrice(deliveryPrice)}
               </Text>
             </CoffeeCheckoutInfo>
 
@@ -79,7 +105,7 @@ export function CoffeeCheckout() {
                 Total
               </Text>
               <Text variant="large" color="subtitle" bold>
-                R$ 33,20
+                {formatValueToPrice(totalPrice)}
               </Text>
             </CoffeeCheckoutInfo>
           </CoffeeCheckoutInfoContainer>
