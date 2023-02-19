@@ -73,3 +73,17 @@ export const CoffeeCheckoutInfo = styled.div`
   align-items: center;
   justify-content: space-between;
 `;
+
+export const WithoutCoffeeSelectedContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+
+  img {
+    width: 350px;
+    height: 300px;
+  }
+`;
