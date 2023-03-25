@@ -32,11 +32,11 @@ export function SelectCoffeeAmount({
 
   return (
     <SelectContainer {...props}>
-      <Minus onClick={decreaseValue} />
+      <Minus onClick={decreaseValue} style={{ cursor: "pointer" }} />
       <Text variant="medium" color="title">
         {String(selectedAmount)}
       </Text>
-      <Plus onClick={increaseValue} />
+      <Plus onClick={increaseValue} style={{ cursor: "pointer" }} />
     </SelectContainer>
   );
 }
