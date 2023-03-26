@@ -28,6 +28,14 @@ export function coffeesReducer(state: CoffeesState, action: any) {
         (coffee) => coffee.id === action.payload.coffeeId
       );
 
+      if (action.payload.amount === 0) {
+        return produce(state, (draft) => {
+          draft.coffees = draft.coffees.filter(
+            (coffee) => coffee.id !== action.payload.coffeeId
+          );
+        });
+      }
+
       return produce(state, (draft) => {
         draft.coffees[coffeeIndex].amount = action.payload.amount;
       });
