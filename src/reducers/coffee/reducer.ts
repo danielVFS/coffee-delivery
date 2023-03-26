@@ -40,6 +40,13 @@ export function coffeesReducer(state: CoffeesState, action: any) {
         draft.coffees[coffeeIndex].amount = action.payload.amount;
       });
     }
+    case CoffeeActionsTypes.REMOVE_COFFEE: {
+      return produce(state, (draft) => {
+        draft.coffees = draft.coffees.filter(
+          (coffee) => coffee.id !== action.payload.coffeeId
+        );
+      });
+    }
     default:
       return state;
   }

@@ -21,7 +21,8 @@ import {
 export function CoffeeCheckout() {
   const [deliveryPrice, setDeliveryPrice] = useState(5);
 
-  const { coffees, changeCoffeeAmount } = useContext(CoffeeContext);
+  const { coffees, changeCoffeeAmount, removeCoffee } =
+    useContext(CoffeeContext);
 
   const formatValueToPrice = (value: number): string => {
     const formattedPrice = new Intl.NumberFormat("pt-BR", {
@@ -31,6 +32,10 @@ export function CoffeeCheckout() {
     }).format(value);
 
     return formattedPrice;
+  };
+
+  const handleRemoveCoffee = (coffeeId: string) => {
+    removeCoffee(coffeeId);
   };
 
   const handleChangeCoffeeAmount = (amount: number, coffeeId: string) => {
@@ -47,8 +52,6 @@ export function CoffeeCheckout() {
       (accumulator, currentValue) => accumulator + currentValue.price,
       0
     ) + deliveryPrice;
-
-  console.log(coffees);
 
   return (
     <CoffeeCheckoutContainer>
@@ -70,7 +73,9 @@ export function CoffeeCheckout() {
                           coffee={coffee}
                           onAmountChange={handleChangeCoffeeAmount}
                         />
-                        <CoffeeCheckoutRemoveItemButton>
+                        <CoffeeCheckoutRemoveItemButton
+                          onClick={(e) => handleRemoveCoffee(coffee.id)}
+                        >
                           <Trash width={16} />
                           <Text variant="small" color="text">
                             REMOVER
