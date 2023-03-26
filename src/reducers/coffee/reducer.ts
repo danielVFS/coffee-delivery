@@ -8,7 +8,7 @@ interface CoffeesState {
 
 export function coffeesReducer(state: CoffeesState, action: any) {
   switch (action.type) {
-    case CoffeeActionsTypes.ADD_COFFEE_TO_CART:
+    case CoffeeActionsTypes.ADD_COFFEE_TO_CART: {
       const coffeeIndex = state.coffees.findIndex(
         (coffee) => coffee.id === action.payload.coffee.id
       );
@@ -22,6 +22,16 @@ export function coffeesReducer(state: CoffeesState, action: any) {
       return produce(state, (draft) => {
         draft.coffees[coffeeIndex].amount = action.payload.coffee.amount;
       });
+    }
+    case CoffeeActionsTypes.CHANGE_COFFEE_AMOUNT: {
+      const coffeeIndex = state.coffees.findIndex(
+        (coffee) => coffee.id === action.payload.coffeeId
+      );
+
+      return produce(state, (draft) => {
+        draft.coffees[coffeeIndex].amount = action.payload.amount;
+      });
+    }
     default:
       return state;
   }

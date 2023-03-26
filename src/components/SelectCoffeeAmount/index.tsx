@@ -1,15 +1,18 @@
 import { Minus, Plus } from "phosphor-react";
 import { useState } from "react";
+import { Coffee } from "../../core/models/Coffee";
 import { Text } from "../Text";
 import { SelectContainer } from "./styles";
 
 interface SelectCoffeeAmountProps
   extends React.HTMLAttributes<HTMLButtonElement> {
+  coffee: Coffee;
   amount?: number;
-  onAmountChange: (value: number) => void;
+  onAmountChange: (amount: number, coffeeId: string) => void;
 }
 
 export function SelectCoffeeAmount({
+  coffee,
   amount,
   onAmountChange,
   ...props
@@ -21,13 +24,13 @@ export function SelectCoffeeAmount({
   const decreaseValue = () => {
     const value = selectedAmount !== 0 ? selectedAmount - 1 : 0;
     setSelectedAmount(value);
-    onAmountChange(value);
+    onAmountChange(value, coffee.id);
   };
 
   const increaseValue = () => {
     const value = selectedAmount + 1;
     setSelectedAmount(value);
-    onAmountChange(value);
+    onAmountChange(value, coffee.id);
   };
 
   return (

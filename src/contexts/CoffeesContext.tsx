@@ -1,13 +1,15 @@
 import { createContext, ReactNode, useReducer } from "react";
 import { Coffee } from "../core/models/Coffee";
-import { addCoffeeToCartAction } from "../reducers/coffee/actions";
+import {
+  addCoffeeToCartAction,
+  changeCoffeeAmountAction,
+} from "../reducers/coffee/actions";
 import { coffeesReducer } from "../reducers/coffee/reducer";
 
 interface CoffeesContextData {
   coffees: Coffee[];
   addCoffeeToCart: (coffee: Coffee) => void;
-  increaseCoffeeAmount: (coffeeId: string) => void;
-  decreaseCoffeeAmount: (coffeeId: string) => void;
+  changeCoffeeAmount: (amount: number, coffeeId: string) => void;
 }
 
 export const CoffeeContext = createContext({} as CoffeesContextData);
@@ -27,17 +29,16 @@ export function CoffeesContextProvider({
     dispatch(addCoffeeToCartAction(coffee));
   };
 
-  const increaseCoffeeAmount = (coffeeId: string) => {};
-
-  const decreaseCoffeeAmount = (coffeeId: string) => {};
+  const changeCoffeeAmount = (amount: number, coffeeId: string) => {
+    dispatch(changeCoffeeAmountAction(amount, coffeeId));
+  };
 
   return (
     <CoffeeContext.Provider
       value={{
         coffees,
         addCoffeeToCart,
-        increaseCoffeeAmount,
-        decreaseCoffeeAmount,
+        changeCoffeeAmount,
       }}
     >
       {children}

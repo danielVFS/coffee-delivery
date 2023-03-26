@@ -21,7 +21,7 @@ import {
 export function CoffeeCheckout() {
   const [deliveryPrice, setDeliveryPrice] = useState(5);
 
-  const { coffees } = useContext(CoffeeContext);
+  const { coffees, changeCoffeeAmount } = useContext(CoffeeContext);
 
   const formatValueToPrice = (value: number): string => {
     const formattedPrice = new Intl.NumberFormat("pt-BR", {
@@ -31,6 +31,10 @@ export function CoffeeCheckout() {
     }).format(value);
 
     return formattedPrice;
+  };
+
+  const handleChangeCoffeeAmount = (amount: number, coffeeId: string) => {
+    changeCoffeeAmount(amount, coffeeId);
   };
 
   const priceOfCoffees = coffees.reduce(
@@ -44,14 +48,16 @@ export function CoffeeCheckout() {
       0
     ) + deliveryPrice;
 
+  console.log(coffees);
+
   return (
     <CoffeeCheckoutContainer>
       {coffees.length > 0 ? (
         <>
           {coffees.map((coffee) => {
             return (
-              <>
-                <CoffeeCheckoutItem key={coffee.id}>
+              <div key={coffee.id}>
+                <CoffeeCheckoutItem>
                   <CoffeeCheckoutItemInfo>
                     <img src={coffee.srcImg} />
                     <CoffeeCheckoutItemInfoDetails>
@@ -61,7 +67,8 @@ export function CoffeeCheckout() {
                       <CoffeeCheckoutItemInfoActions>
                         <SelectCoffeeAmount
                           amount={coffee.amount}
-                          onAmountChange={() => {}}
+                          coffee={coffee}
+                          onAmountChange={handleChangeCoffeeAmount}
                         />
                         <CoffeeCheckoutRemoveItemButton>
                           <Trash width={16} />
@@ -73,11 +80,11 @@ export function CoffeeCheckout() {
                     </CoffeeCheckoutItemInfoDetails>
                   </CoffeeCheckoutItemInfo>
                   <Text variant="medium" color="text" bold>
-                    {formatValueToPrice(coffee.price * coffee.amount)}
+                    {formatValueToPrice(coffee.price * coffee.amount!)}
                   </Text>
                 </CoffeeCheckoutItem>
                 <ListDivider />
-              </>
+              </div>
             );
           })}
 

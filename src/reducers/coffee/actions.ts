@@ -2,8 +2,7 @@ import { Coffee } from "../../core/models/Coffee";
 
 export enum CoffeeActionsTypes {
   ADD_COFFEE_TO_CART = "ADD_COFFEE_TO_CART",
-  INCREASE_COFFEE_AMOUNT = "INCREASE_COFFEE_AMOUNT",
-  DECREASE_COFFEE_AMOUNT = "DECREASE_COFFEE_AMOUNT",
+  CHANGE_COFFEE_AMOUNT = "CHANGE_COFFEE_AMOUNT",
 }
 
 export function addCoffeeToCartAction(coffee: Coffee) {
@@ -15,19 +14,11 @@ export function addCoffeeToCartAction(coffee: Coffee) {
   };
 }
 
-export function increaseCoffeeAmountAction(coffeeId: string) {
+export function changeCoffeeAmountAction(amount: number, coffeeId: string) {
   return {
-    type: CoffeeActionsTypes.ADD_COFFEE_TO_CART,
+    type: CoffeeActionsTypes.CHANGE_COFFEE_AMOUNT,
     payload: {
-      coffeeId,
-    },
-  };
-}
-
-export function decreaseCoffeeAmountAction(coffeeId: string) {
-  return {
-    type: CoffeeActionsTypes.ADD_COFFEE_TO_CART,
-    payload: {
+      amount,
       coffeeId,
     },
   };

@@ -65,6 +65,7 @@ export function CoffeeItem({ coffee }: CoffeeItemProps) {
         <Actions>
           <SelectCoffeeAmount
             amount={amount}
+            coffee={coffee}
             onAmountChange={handleSetAmount}
           />
           <IconButton variant="purple" onClick={handleAddShoppingToCart}>
